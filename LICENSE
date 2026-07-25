@@ -1,0 +1,25 @@
+Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+
+Copyright (c) 2026 tao-counsel contributors
+
+이 저장소의 모든 내용 — `text/` 의 도덕경 장별 파일, 상담 스킬, 문서 —
+은 CC BY-SA 4.0 으로 배포됩니다.
+
+전문: https://creativecommons.org/licenses/by-sa/4.0/legalcode.ko
+요약: https://creativecommons.org/licenses/by-sa/4.0/deed.ko
+
+## 왜 BY-SA 인가
+
+`text/` 의 `번역` 섹션은 위키문헌 「번역:도덕경」에서 가져온 것이고,
+그 번역은 CC BY-SA 3.0 / GFDL 1.2 로 배포됩니다. BY-SA 는 copyleft —
+파생물도 같은 조건으로 열어야 합니다. CC BY-SA 3.0 은 4.0 으로 올려
+재배포하는 것이 허용되므로, 저장소 전체를 4.0 으로 통일했습니다.
+
+출처와 각 섹션의 저작권 구분은 `text/SOURCE.md` 를 보세요.
+
+## 예외 — 퍼블릭 도메인
+
+`text/` 의 `원문` 섹션(한문)은 노자의 저작으로 퍼블릭 도메인이며,
+위 라이선스의 제약을 받지 않습니다.
+
+`sessions/` 의 상담 기록은 개인 기록이며 배포 대상이 아닙니다.
