@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" width="320" height="420" role="img" aria-label="물가에 선 신선 — tao-counsel 캐릭터">
+  <title>무명(無名) — tao-counsel의 신선</title>
+  <desc>지팡이와 호리병을 든 노인이 물가에 서 있다. 수묵 선으로 그렸다.</desc>
+
+  <defs>
+    <style><![CDATA[
+      .ink  { stroke:#4A4238; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .robe { fill:#DCCEA8; }
+      .skin { fill:#EFE6CC; }
+
+      .draw { stroke-dasharray:900; stroke-dashoffset:900;
+              animation:draw 2.2s cubic-bezier(.5,0,.2,1) forwards; }
+      .d1{animation-delay:.1s} .d2{animation-delay:.35s} .d3{animation-delay:.6s}
+      .d4{animation-delay:.85s} .d5{animation-delay:1.1s}
+      @keyframes draw{ to{ stroke-dashoffset:0 } }
+
+      .fadein{ opacity:0; animation:fadein 1.2s ease .5s forwards }
+      @keyframes fadein{ to{ opacity:1 } }
+
+      /* 숨 쉬듯 아주 느리게 떠 있는다 */
+      .float{ animation:float 7s ease-in-out infinite }
+      @keyframes float{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+
+      /* 수염과 옷자락이 바람을 받는다 */
+      .wind{ transform-box:fill-box; transform-origin:top center;
+             animation:wind 5.4s ease-in-out infinite }
+      .w2{ animation-delay:-1.8s; animation-duration:6.6s }
+      .w3{ animation-delay:-3.2s; animation-duration:4.8s }
+      @keyframes wind{ 0%,100%{transform:rotate(-2.4deg)} 50%{transform:rotate(2.8deg)} }
+
+      /* 눈은 거의 감겨 있다가 가끔 뜬다 */
+      .eye{ animation:blink 9s ease-in-out infinite }
+      @keyframes blink{ 0%,92%,100%{transform:scaleY(1)} 95%{transform:scaleY(.15)} }
+
+      /* 발치의 물결 */
+      .wave{ animation:wave 6s ease-in-out infinite }
+      .v2{ animation-delay:-2s } .v3{ animation-delay:-4s }
+      @keyframes wave{ 0%,100%{transform:translateX(-6px); opacity:.35}
+                       50%    {transform:translateX(6px);  opacity:.7} }
+
+      @media (prefers-reduced-motion: reduce){
+        .draw,.fadein,.float,.wind,.eye,.wave{ animation:none }
+        .draw{ stroke-dashoffset:0 } .fadein{ opacity:1 }
+      }
+    ]]></style>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="4" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".12"/></feComponentTransfer>
+      <feComposite in2="SourceGraphic" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="320" height="420" fill="#E7DBBA"/>
+  <rect width="320" height="420" fill="#C9BC96" filter="url(#grain)" opacity=".5"/>
+
+  <!-- 배경 먼 산 -->
+  <path d="M0 190 C 50 150, 86 176, 128 142 C 166 112, 196 158, 244 136 C 282 118, 302 156, 320 144 L320 300 L0 300 Z"
+        fill="#B9AF90" opacity=".35" class="fadein"/>
+
+  <g class="float">
+    <!-- ── 지팡이 ── -->
+    <path d="M238 118 C 236 190, 234 268, 232 336" class="ink draw d1" stroke-width="3.4" opacity=".85"/>
+    <path d="M238 118 C 244 110, 250 110, 254 116" class="ink draw d1" stroke-width="2.6" opacity=".7"/>
+
+    <!-- ── 옷 ── -->
+    <g class="fadein">
+      <path d="M160 150 C 132 158, 118 190, 112 232 C 106 276, 104 310, 108 336
+               L 214 336 C 216 306, 212 268, 204 228 C 196 188, 186 158, 160 150 Z"
+            class="robe"/>
+    </g>
+    <path d="M160 150 C 132 158, 118 190, 112 232 C 106 276, 104 310, 108 336"
+          class="ink draw d2" stroke-width="2.4" opacity=".8"/>
+    <path d="M160 150 C 186 158, 196 188, 204 228 C 212 268, 216 306, 214 336"
+          class="ink draw d2" stroke-width="2.4" opacity=".8"/>
+
+    <!-- 옷깃 (교임, 왼쪽이 위로) -->
+    <path d="M160 152 C 150 172, 142 194, 138 214" class="ink draw d3" stroke-width="1.8" opacity=".7"/>
+    <path d="M160 152 C 170 172, 178 192, 182 210" class="ink draw d3" stroke-width="1.8" opacity=".7"/>
+    <!-- 허리띠 -->
+    <path d="M124 236 C 152 244, 178 244, 200 236" class="ink draw d4" stroke-width="2.6" opacity=".75"/>
+    <path d="M162 242 C 160 258, 158 268, 156 278" class="ink draw d4" stroke-width="1.4" opacity=".5"/>
+    <!-- 옷주름 -->
+    <path d="M132 262 C 130 288, 128 312, 128 332" class="ink draw d5" stroke-width="1.2" opacity=".45"/>
+    <path d="M166 258 C 168 286, 170 312, 170 332" class="ink draw d5" stroke-width="1.2" opacity=".45"/>
+    <path d="M192 264 C 196 290, 198 314, 198 332" class="ink draw d5" stroke-width="1.2" opacity=".4"/>
+
+    <!-- 옷자락 — 바람에 날린다 -->
+    <g class="wind w2">
+      <path d="M108 336 C 92 342, 78 348, 66 358" class="ink draw d5" stroke-width="2" opacity=".6"/>
+      <path d="M112 332 C 98 338, 86 344, 76 352" class="ink draw d5" stroke-width="1.2" opacity=".4"/>
+    </g>
+
+    <!-- ── 소매와 손 (지팡이를 쥔다) ── -->
+    <path d="M196 196 C 214 200, 226 206, 236 214" class="ink draw d4" stroke-width="2.2" opacity=".7"/>
+    <path d="M198 214 C 214 218, 226 222, 234 228" class="ink draw d4" stroke-width="1.6" opacity=".55"/>
+
+    <!-- ── 호리병 (허리에 매단다) ── -->
+    <g class="wind w3">
+      <path d="M128 238 C 122 246, 116 252, 111 258" class="ink draw d5" stroke-width="1.4" opacity=".65"/>
+      <path d="M108 262 c -7 3 -11 10 -11 17 c 0 9 7 15 14 15 c 8 0 14 -6 14 -15
+               c 0 -7 -5 -14 -11 -17 c 1 -4 1 -7 0 -9 l -6 0 c -1 2 -1 5 0 9 Z"
+            fill="#C9B27E" stroke="#4A4238" stroke-width="1.6" opacity=".9"/>
+    </g>
+
+    <!-- ── 머리 ── -->
+    <ellipse cx="160" cy="118" rx="26" ry="29" class="skin fadein"/>
+    <path d="M134 118 C 134 100, 144 88, 160 88 C 176 88, 186 100, 186 118
+             C 186 136, 176 148, 160 148 C 144 148, 134 136, 134 118 Z"
+          class="ink draw d2" stroke-width="2.2" opacity=".8"/>
+
+    <!-- 상투와 관 -->
+    <path d="M138 100 C 144 82, 176 82, 182 100" class="ink draw d1" stroke-width="2.4" opacity=".8"/>
+    <path d="M152 84 C 154 74, 166 74, 168 84" class="ink draw d1" stroke-width="2.2" opacity=".75"/>
+    <path d="M148 86 H172" class="ink draw d1" stroke-width="2" opacity=".6"/>
+
+    <!-- 눈썹 — 길게 흘러내린다 -->
+    <path d="M144 112 C 138 110, 133 112, 130 118" class="ink draw d3" stroke-width="1.8" opacity=".75"/>
+    <path d="M176 112 C 182 110, 187 112, 190 118" class="ink draw d3" stroke-width="1.8" opacity=".75"/>
+
+    <!-- 눈 — 반쯤 감겨 있다 -->
+    <g class="eye" style="transform-box:fill-box; transform-origin:center">
+      <path d="M146 122 C 149 119, 154 119, 157 122" class="ink draw d3" stroke-width="1.8" opacity=".85"/>
+      <path d="M163 122 C 166 119, 171 119, 174 122" class="ink draw d3" stroke-width="1.8" opacity=".85"/>
+    </g>
+
+    <!-- 코와 입 -->
+    <path d="M160 126 C 159 131, 158 134, 160 136" class="ink draw d4" stroke-width="1.3" opacity=".55"/>
+    <path d="M153 142 C 157 145, 163 145, 167 142" class="ink draw d4" stroke-width="1.4" opacity=".6"/>
+
+    <!-- 수염 — 바람에 흔들린다 -->
+    <g class="wind">
+      <path d="M144 144 C 138 172, 140 202, 148 228 C 152 240, 158 246, 160 248"
+            class="ink draw d4" stroke-width="2" opacity=".85"/>
+      <path d="M176 144 C 182 172, 180 200, 172 226 C 168 238, 162 245, 160 248"
+            class="ink draw d4" stroke-width="2" opacity=".85"/>
+      <path d="M152 148 C 149 180, 152 212, 157 238" class="ink draw d4" stroke-width="1.5" opacity=".7"/>
+      <path d="M168 148 C 171 180, 168 210, 163 238" class="ink draw d4" stroke-width="1.5" opacity=".7"/>
+      <path d="M160 150 C 159 186, 160 216, 160 244" class="ink draw d4" stroke-width="1.3" opacity=".6"/>
+      <!-- 콧수염 -->
+      <path d="M152 138 C 145 141, 140 146, 137 154" class="ink draw d4" stroke-width="1.5" opacity=".7"/>
+      <path d="M168 138 C 175 141, 180 146, 183 154" class="ink draw d4" stroke-width="1.5" opacity=".7"/>
+    </g>
+  </g>
+
+  <!-- ── 물가 ── -->
+  <path d="M0 344 H320" stroke="#8E866D" stroke-width="1.2" opacity=".45"/>
+  <g stroke="#8E866D" fill="none" stroke-linecap="round">
+    <path class="wave"    d="M28 360 C 52 354, 76 366, 100 360" stroke-width="1.4"/>
+    <path class="wave v2" d="M150 372 C 176 366, 202 378, 228 372" stroke-width="1.4"/>
+    <path class="wave v3" d="M60 388 C 92 382, 124 394, 156 388" stroke-width="1.2"/>
+    <path class="wave v2" d="M198 396 C 220 391, 242 401, 264 396" stroke-width="1.1"/>
+  </g>
+
+  <!-- 낙관 -->
+  <g class="fadein">
+    <rect x="266" y="30" width="30" height="30" rx="2" fill="#9E3B2E" opacity=".85"/>
+    <text x="281" y="52" text-anchor="middle" font-size="19" fill="#E7DBBA"
+          font-family="'Nanum Myeongjo','Songti SC',serif">道</text>
+  </g>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="tao-counsel 아이콘 — 붓으로 그린 원 안의 물방울">
+  <title>tao-counsel</title>
+  <defs>
+    <style><![CDATA[
+      .enso { stroke:#E7DBBA; fill:none; stroke-linecap:round;
+              stroke-dasharray:330; stroke-dashoffset:330;
+              animation:enso 2.6s cubic-bezier(.45,0,.2,1) forwards; }
+      @keyframes enso{ to{ stroke-dashoffset:0 } }
+
+      .drop { opacity:0; animation:drop 4.6s cubic-bezier(.4,0,.9,.5) 2.2s infinite; }
+      @keyframes drop{
+        0%      { transform:translateY(-6px); opacity:0 }
+        14%     { opacity:1 }
+        48%     { transform:translateY(26px); opacity:1 }
+        54%,100%{ transform:translateY(26px); opacity:0 }
+      }
+      .ring { stroke:#C8B98A; fill:none; opacity:0;
+              animation:ring 4.6s ease-out 2.2s infinite; }
+      .r2{ animation-delay:2.42s } .r3{ animation-delay:2.64s }
+      @keyframes ring{
+        0%,48% { transform:scale(.12); opacity:0 }
+        52%    { opacity:.9 }
+        100%   { transform:scale(1); opacity:0 }
+      }
+      @media (prefers-reduced-motion: reduce){
+        .enso{ animation:none; stroke-dashoffset:0 }
+        .drop{ animation:none; opacity:1; transform:translateY(26px) }
+        .ring{ animation:none; opacity:.5; transform:scale(.7) }
+      }
+    ]]></style>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#046134"/><stop offset="1" stop-color="#013C20"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="128" height="128" rx="28" fill="url(#g)"/>
+
+  <!-- 원상(圓相) — 한 번에 그은 붓질, 끝은 닫히지 않는다 -->
+  <path class="enso"
+        d="M84 30 C 106 40, 114 66, 104 88 C 94 110, 66 118, 44 106
+           C 22 94, 16 66, 30 46 C 42 29, 62 22, 80 26"
+        stroke-width="5" opacity=".9"/>
+
+  <!-- 물방울 -->
+  <g class="drop">
+    <path d="M64 46 C 70 58, 74 64, 74 70 a10 10 0 0 1 -20 0 c0-6 4-12 10-24 Z"
+          fill="#E7DBBA"/>
+  </g>
+
+  <!-- 파문 -->
+  <g transform="translate(64,92)">
+    <ellipse class="ring"    rx="14" ry="4"   stroke-width="2"/>
+    <ellipse class="ring r2" rx="24" ry="6.5" stroke-width="1.6"/>
+    <ellipse class="ring r3" rx="34" ry="9"   stroke-width="1.2"/>
+  </g>
+
+  <!-- 수면 -->
+  <path d="M28 92 H100" stroke="#A68B62" stroke-width="1.4" opacity=".55" stroke-linecap="round"/>
+</svg>

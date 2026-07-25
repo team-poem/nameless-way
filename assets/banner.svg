@@ -1,0 +1,251 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360" role="img" aria-label="tao-counsel — 도덕경 상담 하네스">
+  <title>tao-counsel — 도덕경 상담 하네스</title>
+
+  <defs>
+    <style><![CDATA[
+      :root{}
+      .ink   { stroke:#4A4238; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+      .wash  { fill:#B9AF90; opacity:.55; }
+      .wash2 { fill:#8E866D; opacity:.45; }
+      .paperfill { fill:#E7DBBA; }
+
+      /* 붓이 지나가듯 그려지는 선 */
+      .draw { stroke-dasharray:1200; stroke-dashoffset:1200;
+              animation:draw 2.4s cubic-bezier(.5,0,.2,1) forwards; }
+      .d1{animation-delay:.15s} .d2{animation-delay:.45s} .d3{animation-delay:.75s}
+      .d4{animation-delay:1.0s} .d5{animation-delay:1.25s} .d6{animation-delay:1.5s}
+      @keyframes draw{ to{ stroke-dashoffset:0 } }
+
+      /* 안개가 골짜기를 흐른다 */
+      .mist  { fill:#F2EAD2; opacity:0; animation:mist 17s ease-in-out infinite; }
+      .m2{animation-delay:-6s} .m3{animation-delay:-11s}
+      @keyframes mist{
+        0%   { transform:translateX(-70px); opacity:0 }
+        25%  { opacity:.5 }
+        60%  { opacity:.42 }
+        100% { transform:translateX(150px); opacity:0 }
+      }
+
+      /* 대나무가 바람에 흔들린다 */
+      .sway  { transform-box:fill-box; transform-origin:bottom center;
+               animation:sway 6.5s ease-in-out infinite; }
+      .s2{animation-delay:-2.2s; animation-duration:7.8s}
+      .s3{animation-delay:-4.4s; animation-duration:5.9s}
+      @keyframes sway{ 0%,100%{transform:rotate(-1.6deg)} 50%{transform:rotate(1.9deg)} }
+
+      /* 上善若水 — 물방울이 떨어지고 파문이 번진다 */
+      .drop   { animation:drop 5.2s cubic-bezier(.4,0,.9,.5) infinite; }
+      @keyframes drop{
+        0%,55%  { transform:translateY(0); opacity:0 }
+        60%     { opacity:1 }
+        88%     { transform:translateY(74px); opacity:1 }
+        92%,100%{ transform:translateY(74px); opacity:0 }
+      }
+      .ring   { stroke:#8E866D; fill:none; opacity:0;
+                animation:ring 5.2s ease-out infinite; }
+      .r2{animation-delay:.28s} .r3{animation-delay:.56s}
+      @keyframes ring{
+        0%,88% { transform:scaleX(.15) scaleY(.15); opacity:0 }
+        90%    { opacity:.75 }
+        100%   { transform:scaleX(1) scaleY(1); opacity:0 }
+      }
+
+      /* 글자는 뒤늦게 떠오른다 */
+      .rise { opacity:0; animation:rise 1.5s cubic-bezier(.2,.7,.3,1) forwards; }
+      .t1{animation-delay:1.5s} .t2{animation-delay:1.85s} .t3{animation-delay:2.15s}
+      @keyframes rise{ from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:translateY(0)} }
+
+      /* 세로 한문 기둥은 한 자씩 밝아진다 */
+      .col text { opacity:0; animation:glow 9s ease-in-out infinite; }
+      @keyframes glow{ 0%,70%,100%{opacity:.28} 12%,30%{opacity:.85} }
+
+      @media (prefers-reduced-motion: reduce){
+        .draw,.mist,.sway,.drop,.ring,.rise,.col text{ animation:none }
+        .draw{ stroke-dashoffset:0 } .rise{ opacity:1 }
+        .mist{ opacity:.4 } .col text{ opacity:.5 }
+      }
+    ]]></style>
+
+    <linearGradient id="green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#046134"/>
+      <stop offset="1" stop-color="#013C20"/>
+    </linearGradient>
+
+    <linearGradient id="peak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#9C9377" stop-opacity=".72"/>
+      <stop offset=".55" stop-color="#C2B899" stop-opacity=".45"/>
+      <stop offset="1"   stop-color="#E7DBBA" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="4" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".13"/></feComponentTransfer>
+      <feComposite in2="SourceGraphic" operator="over"/>
+    </filter>
+
+    <filter id="soft"><feGaussianBlur stdDeviation="7"/></filter>
+    <filter id="softer"><feGaussianBlur stdDeviation="15"/></filter>
+
+    <clipPath id="paperClip"><rect x="332" y="34" width="660" height="292" rx="3"/></clipPath>
+  </defs>
+
+  <!-- 바탕: 짙은 소나무 녹 -->
+  <rect width="1280" height="360" fill="url(#green)"/>
+  <rect width="1280" height="360" fill="#014D29" filter="url(#grain)" opacity=".5"/>
+
+  <!-- 왼쪽 세로 한문 기둥 — 道可道非常道 -->
+  <g class="col" fill="#CDBE91" font-family="'Nanum Myeongjo','Songti SC','Apple SD Gothic Neo',serif" font-size="26" text-anchor="middle">
+    <text x="60" y="72">道</text>
+    <text x="60" y="112" style="animation-delay:-1.2s">可</text>
+    <text x="60" y="152" style="animation-delay:-2.4s">道</text>
+    <text x="60" y="192" style="animation-delay:-3.6s">非</text>
+    <text x="60" y="232" style="animation-delay:-4.8s">常</text>
+    <text x="60" y="272" style="animation-delay:-6.0s">道</text>
+  </g>
+  <line x1="60" y1="292" x2="60" y2="326" stroke="#CDBE91" stroke-width="1" opacity=".35"/>
+
+  <!-- ─────────── 종이 위의 수묵 산수 ─────────── -->
+  <g>
+    <rect x="332" y="34" width="660" height="292" rx="3" class="paperfill"/>
+    <rect x="332" y="34" width="660" height="292" rx="3" fill="#C9BC96" filter="url(#grain)" opacity=".55"/>
+
+    <g clip-path="url(#paperClip)">
+      <!-- 먼 산 (옅은 담묵) -->
+      <path d="M332 210 C 400 150, 452 176, 500 132 C 546 90, 590 138, 640 116
+               C 700 90, 742 150, 800 128 C 866 102, 910 158, 992 130 L992 326 L332 326 Z"
+            fill="url(#peak)" filter="url(#soft)"/>
+
+      <!-- 태호석 — 비바람에 깎여 구멍 뚫린 수직 바위 -->
+      <path id="rockA" d="M474 306 C 470 262, 468 226, 476 194 C 480 176, 488 160, 496 152
+               C 502 146, 508 150, 508 160 C 508 172, 504 182, 508 188
+               C 514 196, 524 190, 528 200 C 534 214, 530 228, 536 240
+               C 544 256, 552 276, 556 306 Z" class="wash2"/>
+      <path id="rockB" d="M598 308 C 596 258, 600 216, 614 180 C 622 158, 634 140, 646 130
+               C 654 123, 662 128, 660 140 C 658 152, 650 164, 654 172
+               C 660 184, 674 176, 678 190 C 682 204, 674 218, 680 232
+               C 688 250, 700 274, 706 308 Z" class="wash"/>
+      <path id="rockC" d="M772 306 C 770 268, 774 238, 786 212 C 792 198, 802 186, 810 180
+               C 816 176, 822 180, 820 190 C 818 200, 812 208, 816 214
+               C 822 222, 832 216, 836 226 C 840 238, 836 252, 842 266
+               C 848 280, 852 292, 854 306 Z" class="wash2"/>
+
+      <!-- 바위 윤곽 — 붓이 지나간다 -->
+      <use href="#rockA" class="ink draw d1" fill="none" stroke-width="2.1" opacity=".82"/>
+      <use href="#rockB" class="ink draw d2" fill="none" stroke-width="2.4" opacity=".88"/>
+      <use href="#rockC" class="ink draw d3" fill="none" stroke-width="1.9" opacity=".74"/>
+
+      <!-- 바위에 뚫린 구멍 -->
+      <g opacity=".55">
+        <ellipse cx="494" cy="256" rx="4"   ry="6.5" fill="#E7DBBA"
+                 transform="rotate(-18 494 256)"/>
+        <ellipse cx="494" cy="256" rx="4"   ry="6.5" class="ink draw d4" stroke-width="1"
+                 transform="rotate(-18 494 256)"/>
+        <ellipse cx="650" cy="196" rx="4.5" ry="7.5" fill="#E7DBBA"
+                 transform="rotate(-14 650 196)"/>
+        <ellipse cx="650" cy="196" rx="4.5" ry="7.5" class="ink draw d4" stroke-width="1.1"
+                 transform="rotate(-14 650 196)"/>
+        <ellipse cx="668" cy="258" rx="3"   ry="5"   fill="#E7DBBA"/>
+        <ellipse cx="668" cy="258" rx="3"   ry="5"   class="ink draw d5" stroke-width=".9"/>
+        <ellipse cx="822" cy="252" rx="3.4" ry="5.5" fill="#E7DBBA"
+                 transform="rotate(14 822 252)"/>
+        <ellipse cx="822" cy="252" rx="3.4" ry="5.5" class="ink draw d5" stroke-width="1"
+                 transform="rotate(14 822 252)"/>
+      </g>
+
+      <!-- 준법(皴法) — 바위 결 -->
+      <path d="M488 208 C 486 232, 488 258, 492 284" class="ink draw d4" stroke-width="1.1" opacity=".45"/>
+      <path d="M520 216 C 524 240, 528 264, 530 286" class="ink draw d4" stroke-width="1"   opacity=".38"/>
+      <path d="M622 194 C 618 224, 620 254, 626 284" class="ink draw d4" stroke-width="1.2" opacity=".5"/>
+      <path d="M666 216 C 670 244, 674 266, 676 288" class="ink draw d5" stroke-width="1"   opacity=".42"/>
+      <path d="M792 226 C 790 252, 792 274, 796 292" class="ink draw d5" stroke-width="1"   opacity=".4"/>
+      <path d="M828 244 C 832 266, 836 282, 838 294" class="ink draw d5" stroke-width=".9"  opacity=".34"/>
+
+      <!-- 바위 밑동 이끼 -->
+      <g opacity=".4">
+        <path d="M478 300 C 494 296, 520 296, 552 300" class="ink draw d6" stroke-width="1.4"/>
+        <path d="M604 302 C 626 297, 664 297, 700 302" class="ink draw d6" stroke-width="1.4"/>
+        <path d="M778 300 C 798 296, 830 296, 850 300" class="ink draw d6" stroke-width="1.2"/>
+      </g>
+
+      <!-- 마른 가지 나무 -->
+      <g class="sway">
+        <path d="M396 306 C 398 262, 396 226, 392 190" class="ink draw d2" stroke-width="2.6" opacity=".82"/>
+        <path d="M393 232 C 376 214, 366 200, 358 182" class="ink draw d3" stroke-width="1.6" opacity=".7"/>
+        <path d="M394 210 C 410 192, 420 180, 430 162" class="ink draw d3" stroke-width="1.6" opacity=".7"/>
+        <path d="M392 192 C 384 174, 380 164, 378 150" class="ink draw d4" stroke-width="1.2" opacity=".6"/>
+        <path d="M392 194 C 402 178, 410 170, 418 158" class="ink draw d4" stroke-width="1.2" opacity=".6"/>
+      </g>
+      <g class="sway s2">
+        <path d="M912 308 C 914 274, 912 244, 906 214" class="ink draw d4" stroke-width="2.2" opacity=".7"/>
+        <path d="M908 250 C 926 234, 936 224, 944 208" class="ink draw d5" stroke-width="1.4" opacity=".58"/>
+        <path d="M907 236 C 890 222, 882 214, 874 202" class="ink draw d5" stroke-width="1.4" opacity=".58"/>
+      </g>
+
+      <!-- 대나무 -->
+      <g class="sway s3">
+        <path d="M578 306 C 577 276, 578 246, 580 212" class="ink draw d5" stroke-width="2.4" opacity=".82"/>
+        <!-- 마디 -->
+        <path d="M574 284 H582" class="ink draw d5" stroke-width="1.8" opacity=".7"/>
+        <path d="M575 258 H583" class="ink draw d5" stroke-width="1.8" opacity=".7"/>
+        <path d="M576 232 H584" class="ink draw d5" stroke-width="1.6" opacity=".65"/>
+        <!-- 잎 -->
+        <path d="M582 256 C 598 248, 612 244, 628 242" class="ink draw d6" stroke-width="1.6" opacity=".7"/>
+        <path d="M582 250 C 596 246, 608 244, 620 246" class="ink draw d6" stroke-width="1.1" opacity=".5"/>
+        <path d="M577 244 C 562 234, 552 228, 542 220" class="ink draw d6" stroke-width="1.6" opacity=".7"/>
+        <path d="M580 226 C 594 216, 602 210, 612 202" class="ink draw d6" stroke-width="1.4" opacity=".62"/>
+        <path d="M580 218 C 588 210, 592 204, 596 196" class="ink draw d6" stroke-width="1.1" opacity=".5"/>
+      </g>
+      <g class="sway s2">
+        <path d="M736 308 C 735 282, 736 256, 738 228" class="ink draw d5" stroke-width="2" opacity=".76"/>
+        <path d="M733 286 H741" class="ink draw d5" stroke-width="1.6" opacity=".62"/>
+        <path d="M734 260 H742" class="ink draw d5" stroke-width="1.6" opacity=".62"/>
+        <path d="M735 268 C 719 258, 710 252, 700 244" class="ink draw d6" stroke-width="1.5" opacity=".64"/>
+        <path d="M738 248 C 754 240, 764 234, 776 228" class="ink draw d6" stroke-width="1.5" opacity=".64"/>
+        <path d="M738 240 C 748 234, 754 228, 760 220" class="ink draw d6" stroke-width="1.1" opacity=".48"/>
+      </g>
+
+      <!-- 물가 풀 -->
+      <g opacity=".62">
+        <path d="M448 312 C 452 300, 456 294, 462 288" class="ink draw d6" stroke-width="1.2"/>
+        <path d="M454 312 C 456 302, 458 296, 460 292" class="ink draw d6" stroke-width="1"/>
+        <path d="M862 314 C 866 302, 870 296, 876 290" class="ink draw d6" stroke-width="1.2"/>
+        <path d="M868 314 C 870 304, 872 298, 874 294" class="ink draw d6" stroke-width="1"/>
+      </g>
+
+      <!-- 안개 -->
+      <ellipse class="mist"    cx="600" cy="236" rx="190" ry="20" filter="url(#softer)"/>
+      <ellipse class="mist m2" cx="790" cy="204" rx="150" ry="15" filter="url(#softer)"/>
+      <ellipse class="mist m3" cx="500" cy="266" rx="210" ry="17" filter="url(#softer)"/>
+
+      <!-- 수면 -->
+      <path d="M332 316 H992" stroke="#8E866D" stroke-width="1" opacity=".3"/>
+
+      <!-- 上善若水 — 떨어지는 물방울 -->
+      <g class="drop">
+        <path d="M662 236 C 668 246, 671 251, 671 256 a9 9 0 0 1 -18 0 c0-5 3-10 9-20 Z"
+              fill="#6E6753" opacity=".8"/>
+      </g>
+      <g transform="translate(662,318)">
+        <ellipse class="ring"    rx="26" ry="5" stroke-width="1.4"/>
+        <ellipse class="ring r2" rx="42" ry="8" stroke-width="1.1"/>
+        <ellipse class="ring r3" rx="60" ry="11" stroke-width=".9"/>
+      </g>
+    </g>
+
+    <rect x="332" y="34" width="660" height="292" rx="3" fill="none" stroke="#0C2E1C" stroke-width="1" opacity=".25"/>
+  </g>
+
+  <!-- ─────────── 제목 ─────────── -->
+  <g font-family="'Nanum Myeongjo','Apple SD Gothic Neo','Noto Serif KR',serif">
+    <text class="rise t1" x="1042" y="150" fill="#F0E8CE" font-size="52" letter-spacing="6">도덕경</text>
+    <text class="rise t2" x="1042" y="192" fill="#C8B98A" font-size="21" letter-spacing="2.5">tao-counsel</text>
+    <line class="rise t2" x1="1042" y1="212" x2="1146" y2="212" stroke="#A68B62" stroke-width="1.5" opacity=".8"/>
+    <text class="rise t3" x="1042" y="243" fill="#A9C0AE" font-size="14.5">81장을 근거로 삼는</text>
+    <text class="rise t3" x="1042" y="266" fill="#A9C0AE" font-size="14.5">상담 하네스</text>
+    <text class="rise t3" x="1042" y="308" fill="#7E9986" font-size="12" letter-spacing=".5">上善若水</text>
+  </g>
+
+  <!-- 아래 탄 밴드 -->
+  <rect y="344" width="1280" height="16" fill="#A68B62"/>
+</svg>
